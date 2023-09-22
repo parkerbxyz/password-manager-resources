@@ -14,7 +14,6 @@ jobs:
           ruby-version: 2.6
       - run: ruby tools/convert-shared-credential-to-legacy-format.rb
       - uses: parkerbxyz/git-diff-suggestions@test
-        if: failure()
         with:
           message: "Generated files updated."
       # - name: Commit and push updated files
