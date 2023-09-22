@@ -21,4 +21,4 @@ jobs:
         with:
           file_pattern: 'quirks/*.json'
           commit_message: Update generated files
-      - uses: ./.github/workflows/lint.yml
+      - run: gh api repos/{owner}/{repo}/actions/workflows/lint.yml/dispatches --field ref={branch}
