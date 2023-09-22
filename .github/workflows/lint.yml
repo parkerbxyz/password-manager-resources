@@ -1,8 +1,8 @@
 name: Lint
 
 on:
-  - push
-  - workflow_call
+  push:
+  workflow_call:
 
 jobs:
   all-json-valid:
@@ -44,8 +44,6 @@ jobs:
       run: ruby .github/workflows/lint-scripts/websites-shared-credentials-duplicates.rb
     - name: Verify Generated Files
       run: ruby tools/convert-shared-credential-to-legacy-format.rb --verify
-      # This doesn't need to run on pull_request because the update-generated-files workflow runs it on pull_request
-      if: github.event_name != 'pull_request'
 
   validate-schemas:
     runs-on: ubuntu-latest
