@@ -22,3 +22,5 @@ jobs:
           file_pattern: 'quirks/*.json'
           commit_message: Update generated files
       - run: gh api repos/{owner}/{repo}/actions/workflows/lint.yml/dispatches --field ref={branch}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
