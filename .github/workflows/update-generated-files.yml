@@ -10,8 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.6
       - run: ruby tools/convert-shared-credential-to-legacy-format.rb
       - uses: parkerbxyz/git-diff-suggestions@test
         with:
