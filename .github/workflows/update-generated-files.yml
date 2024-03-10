@@ -18,4 +18,4 @@ jobs:
       - run: ruby tools/convert-shared-credential-to-legacy-format.rb
       - uses: parkerbxyz/suggest-changes@15517a158b6ab10e92bef05860c122c2a57da497 # v1.0.1
         with:
-          comment: "Commit this suggested change to update the generated files."
+          comment: "Please commit the suggested changes to update the generated files."
