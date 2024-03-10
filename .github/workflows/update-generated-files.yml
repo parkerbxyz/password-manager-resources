@@ -13,9 +13,9 @@ jobs:
   update-generated-files:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
       - run: ruby tools/convert-shared-credential-to-legacy-format.rb
-      - uses: parkerbxyz/suggest-changes@f5b10bcbfe35840153c0e823095d260d5abad1f9 # v1.0.0
+      - uses: parkerbxyz/suggest-changes@15517a158b6ab10e92bef05860c122c2a57da497 # v1.0.1
         with:
-          comment: "Generated files updated."
+          comment: "Commit this suggested change to update the generated files."
