@@ -1,0 +1,21 @@
+name: Update generated files
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      [
+        "quirks/shared-credentials.json",
+        "quirks/shared-credentials-historical.json",
+      ]
+
+jobs:
+  update-generated-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+      - run: ruby tools/convert-shared-credential-to-legacy-format.rb
+      - uses: parkerbxyz/suggest-changes@f5b10bcbfe35840153c0e823095d260d5abad1f9 # v1.0.0
+        with:
+          comment: "Generated files updated."
